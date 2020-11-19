@@ -85,7 +85,7 @@ class Aircraft(DB_Connection):
 
         self.cursor.execute(f"INSERT INTO aircraft (Type, Model, Capacity, Num_Classes,Terminal) VALUES ('{craft_type}','{model}',{capacity},{travel_class},{terminal})")
         self.connection.commit()
-        print("Success!")
+
 
 
 

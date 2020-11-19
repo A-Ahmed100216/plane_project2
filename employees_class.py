@@ -1,3 +1,4 @@
+# Import classes
 from people_class import People
 from db_connection import DB_Connection
 
@@ -37,7 +38,7 @@ class Employees(People):
         else:
             print("Employees table does not exist, please try again")
 
-
+# Test - Instantiating class
 if __name__ == "__main__":
     employees = Employees("102901092", "Chicken", "Little", "Male", "Pilot")
     employees.add_to_employees_table("102901092", "Chicken", "Little", "Male", "Pilot", "1")

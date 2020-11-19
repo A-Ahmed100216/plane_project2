@@ -128,7 +128,7 @@ class User_functions(DB_Connection):
 
         elif ask=="3":
             admin.add_new_aircraft()
-            print("Success")
+            print("Success!")
             return self.admin_menu()
         elif ask == "4":
             return self.user_interface()

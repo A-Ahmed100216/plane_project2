@@ -24,7 +24,7 @@ class Customer(People):
         else:
             print("Customers table does not exist, please try again")
 
-    # function to show all the customers
+    # Function to show all the customers
     def show_customers(self):
         if self.test.cursor.tables(table="Customers", tableType="TABLE").fetchone():
             customers = self.test.cursor.execute("""SELECT * FROM Customers""")
@@ -34,7 +34,7 @@ class Customer(People):
         else:
             print("Customers table does not exist, please try again")
 
-#
+# Test - Instantiating class
 if __name__ == "__main__":
     customer = Customer("68546354", "Harry", "Potter", "653214")
     customer.add_to_customer_table("68546354", "Harry", "Potter", "653214", "2", "Male", 0)

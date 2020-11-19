@@ -1,7 +1,9 @@
+# Import pyodbc to establish connection with database
 import pyodbc
+
 class DB_Connection:
     def __init__(self):
-        self.server = "hashimoto.duckdns.org"
+        self.server = "hashimoto.duckdns.org"  # New server
         self.database = "bada_airlines"  # the name of our newly created database
         self.username = "SA"
         self.password = "Passw0rd2020"
