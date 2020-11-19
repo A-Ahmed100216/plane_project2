@@ -1,4 +1,4 @@
-from people import People
+from people_class import People
 from db_connection import DB_Connection
 
 
