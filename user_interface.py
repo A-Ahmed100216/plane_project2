@@ -143,7 +143,6 @@ class User_functions(DB_Connection):
         print(df_2)
         flight_id = input("What is the flightID?    ")
         query=(f"SELECT Customers.PassportID, Customers.FirstName, Customers.Surname, Customers.Gender, Flight_Trip.Destination, Customers.Boarded_Flight FROM Customers INNER JOIN Flight_Trip ON Customers.Flight_ID=Flight_Trip.Flight_ID WHERE Customers.Flight_ID={flight_id} and Customers.Boarded_Flight=0")
-        # query=(f"SELECT * FROM Customers WHERE Flight_ID={flight_id}")
         exported_data = pd.read_sql_query(query,self.connection)
         df_2 = pd.DataFrame(exported_data)
         print(df_2)

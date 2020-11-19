@@ -1,3 +1,4 @@
+# Import relevant modules and classes
 import pandas as pd
 from db_connection import DB_Connection
 
@@ -20,6 +21,7 @@ class Aircraft(DB_Connection):
 
     # Create plane method for inserting plane data
     def plane(self):
+        # Run SQL commands for inserting into database
         self.cursor.execute(
             "INSERT INTO aircraft (Type, Model, Capacity, Num_Classes,Terminal) VALUES ('plane', 'A380',517,3,1)")
         self.cursor.execute(
@@ -39,8 +41,7 @@ class Aircraft(DB_Connection):
             "INSERT INTO aircraft (Type, Model, Capacity, Num_Classes,Terminal) VALUES ('helicopter', 'AS350 B2',5,0,3)")
         self.connection.commit()
 
-
-
+    # Create method for showing data in aircraft table
     def show_aircraft_table(self):
         aircraft_table=self.cursor.execute("SELECT * FROM aircraft").fetchall()
         return aircraft_table
@@ -87,16 +88,8 @@ class Aircraft(DB_Connection):
         print("Success!")
 
 
-class Query(DB_Connection):
 
-    def sql_query(self):
-        query = input("Please enter your sql query    ")
-        exported_data = pd.read_sql_query(f'{query}', self.connection)
-        df_2 = pd.DataFrame(exported_data)
-        print(df_2)
-
-
-# Instantiate class
+# Testing - Instantiate class
 # test=Aircraft()
 # test.create_aircraft_table()
 # test.plane()
@@ -105,8 +98,6 @@ class Query(DB_Connection):
 # print(test.show_aircraft_table())
 
 
-# query=Query()
-# query.sql_query()
 
 
 
