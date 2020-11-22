@@ -1,5 +1,5 @@
 import pyodbc
-import pandas
+import pandas as pd
 from aircraft_class import Aircraft
 
 # FlightTrip is a child of Aircraft
@@ -44,10 +44,11 @@ class Flight_Trip(Aircraft):
         exported_data = pd.read_sql_query('SELECT Flight_ID, Destination FROM Flight_Trip', self.connection)
         df_2 = pd.DataFrame(exported_data)
         print(df_2)
-        flight_id=input("Please select the flight id where you wish to assign a new aircraft: ")
-        new_craft_id=input("Please enter the new craft id you wish to assign")
+        flight_id=input("Please select the flight id where you wish to assign a new aircraft ==> ")
+        new_craft_id=input("Please enter the new craft id you wish to assign ==> ")
         # confirm=input(f"Are you sure you would like to change {flight_id} to a new aircraft,{new_craft_id}? y/n")
-        return self.cursor.execute(f"UPDATE Flight_Trip SET craft_id={new_craft_id} WHERE Flight_ID={flight_id}")
+        self.cursor.execute(f"UPDATE Flight_Trip SET craft_id={new_craft_id} WHERE Flight_ID={flight_id}")
+        self.connection.commit()
 
 
 

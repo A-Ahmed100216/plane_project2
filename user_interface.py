@@ -77,7 +77,7 @@ class User_functions(DB_Connection):
             df_2 = pd.DataFrame(exported_data)
             print(df_2)
             flight.change_plane()
-            print("success")
+            print("Success")
             return self.user_interface()
 
 
